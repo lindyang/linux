@@ -1,0 +1,15 @@
+ctrl+k 删除到末尾
+ctrl+w 当前字符到空格出(向前)
+
+.a 传统的静态库函数 archive
+.so 共享函数库
+
+gcc -o fred fred.c -lm(/usr/lib/libm.a)
+创建lib文件
+ar作用
+ranlib作用
+nm作用
+ldconfig   /etc/ld.so.conf
+
+
+col

@@ -1,3 +1,16 @@
+为了程序便于移植 printf vs echo
+help test
+-u file set-user-id
+-g file set-group-id
+-e -e不可以移植
+$* $@ 如果IFS改变, 那么$*的分隔符将改变, 而$@不受IFS的影响.
+set foo bar bam; echo "$@"; # set?
+env <command>
+ls my_{finger,toe}s list my_fingers my_toes
+set -o onclobber
+set +o onclobber
+set -C
+set +C
 ctrl+k 删除到末尾
 ctrl+w 当前字符到空格出(向前)
 

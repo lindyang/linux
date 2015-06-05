@@ -1,3 +1,48 @@
+dialog
+
+sh -n    set -o noexec/set -n
+sh -v    set -o verbose/set -v
+sh -x    set -o xtrace/set -x
+sh -u    set -o nounset/set -u
+
+${bar:+ok}  在bar不为空下输出ok
+git 两次add作为一个add
+
+punct, space, blank, print, graph, 
+space: 空白字符, 包括垂直制表符
+printf "yld ok yln.\nmyname is yll.\n" | grep -E yl.\(\([[:punct:]]\)\|[[:space:]]\)
+-ok {} \;
+find [path] [options] [tests] [actions]
+find /bin /var 
+unset 不能删除类似IFS的只读变量
+trap command INT
+trap -l
+return 默认返回最后一条命令执行的代码
+expr1 | expr2
+expr1 & expr2
+
+set -a | set -allexport
+
+exec 3< afile 文件描述符3被打开以便从afile中读取数据
+exec wall "Thanks for"
+
+foo=10;x=foo;eval y='$'$x;
+内置命令> : eval
+
+echo -e "lindyang\c"
+source = .
+
+${a-b}  a没有设置, 那么就打印b; a仍然是a
+${a+b}  a被设置,   那么打印b;   a仍然是a
+${a:-b} a值为假的, 那么就打印b; a仍然是a
+${a:+b} a被设置为真, 那么打印b; a仍然a
+${a=b}
+${a:=b}
+${a?b}
+${a:?b}
+
+break num: num 可以跳出几层循环.
+continue num: num 可以跳出几层循环.
 为了程序便于移植 printf vs echo
 help test
 -u file set-user-id

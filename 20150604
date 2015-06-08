@@ -1,3 +1,6 @@
+~home
+ln -i
+systemctl enable NetworkManager-wait-online.service
 dialog
 
 sh -n    set -o noexec/set -n

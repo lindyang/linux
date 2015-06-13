@@ -1,3 +1,4 @@
+TIMEFORMAT "" time ./a.out
 ~home
 ln -i
 systemctl enable NetworkManager-wait-online.service

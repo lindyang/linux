@@ -1,0 +1,12 @@
+http://lintut.com/how-to-setup-network-after-rhelcentos-7-minimal-installation/
+nmcli d
+nmtui
+
+yum install zlib zlib-devel
+yum install openssl openssl-devel
+./configure
+make
+make install
+
+setuptools
+pip

@@ -1,0 +1,3 @@
+设置语言编码
+show variables like '%character%';
+show variables like '%collation%';

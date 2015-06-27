@@ -1,0 +1,2 @@
+件中含有中, 应该设置
+git config core.quotepath false

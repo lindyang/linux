@@ -1,0 +1,62 @@
+首选开启apache代理功能。
+
+在httpd.conf里面，取消下面四行的注释：
+
+LoadModule proxy_module modules/mod_proxy.so
+
+LoadModule proxy_connect_module modules/mod_proxy_connect.so
+
+LoadModule proxy_http_module modules/mod_proxy_http.so
+
+LoadModule proxy_ftp_module modules/mod_proxy_ftp.so
+
+然后设置开启虚拟主机，设置如下：
+
+LoadModule vhost_alias_module modules/mod_vhost_alias.so
+
+# Virtual hosts
+Include conf/extra/httpd-vhosts.conf
+
+设置虚拟主机 Apache2.2\conf\extra\httpd-vhosts.conf 。
+
+
+
+NameVirtualHost xx.xx.xx.xx:80(侦听公网IP和端口)
+
+<VirttualHost *:80>
+
+DocumentRoot x:/www/web1 (apache上非代理的站www.a.com)
+
+ServerName www.a.com
+
+</VirttualHost>
+
+
+
+以下为重点，将要代理的站
+
+<VirtualHost *>
+
+    ServerName jiangweisuo.com:80  
+  
+    ServerAlias www.jiangweisuo.com
+
+    ProxyPass / http://localhost:1024/     IIS上的站点
+
+    ProxyPassReverse / http://localhost:1024/
+
+    ErrorLog logs/jiangweisuo.com.log
+
+</VirtualHost>
+
+如何需要代理多个站，以此类推...
+
+之后重启APACHE 服务
+
+OK。。打完收功 
+
+
+
+
+
+

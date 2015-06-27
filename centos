@@ -1,12 +1,33 @@
+stty erase '^h' or stty erase '^?'
+
+sudo /usr/bin/mysql_secure_installation
+¸ü¸Ä×Ö·û¼¯ vi /etc/locale.conf
+config yum repos: vi /etc/resolve.conf   nameserver 8.8.8.8
+
+
 http://lintut.com/how-to-setup-network-after-rhelcentos-7-minimal-installation/
 nmcli d
 nmtui
 
+yum install java java-devel
+
+yum install httpd httpd-devel
+yum install ncurses-devel
 yum install zlib zlib-devel
 yum install openssl openssl-devel
+yum install sqlite sqlite-devel
 ./configure
 make
 make install
 
 setuptools
 pip
+
+lsb_release -a
+
+yum groupinstall "X Window System"
+yum groupinstall "GNOME Desktop Environment"
+yum install java java-devel
+yum install glibci686
+yum install zlib.i686
+

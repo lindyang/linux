@@ -1,3 +1,5 @@
+echo ${var^}
+echo ${var^^}
 °²×°mod-wsgi
 httpshttps://gist.github.com/jmorton/558f7079ed2159156277
 stty erase '^h' or stty erase '^?'

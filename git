@@ -1,2 +1,10 @@
 件中含有中, 应该设置
 git config core.quotepath false
+
+gitignore
+1. It is not possible to re-include a file if a parent directory of that file is excluded.
+2. foo/ 只是匹配件夹和底下的件夹.
+3. Documentation/*.html 匹配 Documentation/git.html 但是不匹配 Documentation/perf/perf.html
+4.  **/foo match file or director foo anywhere
+5. abc/** matches all files inside directory "abc"
+6. a/**/b match 'a/b', 'a/x/b', 'a/x/y/b';

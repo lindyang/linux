@@ -56,6 +56,56 @@ ServerName www.a.com
 OK。。打完收功 
 
 
+LoadModule wsgi_module modules/mod_wsgi-py34-VC10.so
+LoadModule proxy_module modules/mod_proxy.so
+LoadModule proxy_http_module modules/mod_proxy_http.so
+Include "C:/Users/lindyang/jinzht/apache/apache_django_wsgi.conf"
+ProxyPass /cas http://www.baidu.com/
+ProxyPassReverse /cas  http://www.baidu.com/
+
+
+<VirtualHost *:80>
+  #DocumentRoot C:/Users/lindyang/jinzht
+  ServerName www.web.com
+  ServerAlias www.web.com
+  ServerAdmin 462171852@qq.com
+  WSGIScriptAlias / C:/Users/lindyang/jinzht/jinzht/wsgi.py
+  #WSGIPythonPath C:/Users/lindyang/jinzht
+  <Directory C:/Users/lindyang/jinzht/jinzht>
+      <Files wsgi.py>
+          Require all granted
+          Allow from all
+      </Files>
+  </Directory>
+
+  Alias /static/ C:/Users/lindyang/jinzht/static/
+  <Directory C:/Users/lindyang/jinzht/static>
+      Require all granted
+      Allow from all
+  </Directory>
+</VirtualHost>
+
+<VirtualHost *:80>
+
+  ServerName www.jzt.com
+  ServerAlias www.jzt.com
+  ServerAdmin 462171852@qq.com
+  WSGIScriptAlias / C:/Users/lindyang/web/jinzht/wsgi.py
+  <Directory C:/Users/lindyang/web/jinzht>
+      <Files wsgi.py>
+          Require all granted
+          Allow from all
+      </Files>
+  </Directory>
+
+  Alias /static/ C:/Users/lindyang/web/static/
+  <Directory C:/Users/lindyang/web/static>
+      Require all granted
+      Allow from all
+  </Directory>
+</VirtualHost>
+
+
 
 
 
